@@ -9,7 +9,7 @@ let board = Array(9).fill(null);
 
 function calculateWinner(squares) {
 
-  const lines = [
+  const winningInstance = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -20,12 +20,14 @@ function calculateWinner(squares) {
     [2, 4, 6],
   ];
 
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+  //for loop that checks the winner based on the board status and the winningInstance declared
+  for (let i = 0; i < winningInstance.length; i++) {
+    const [a, b, c] = winningInstance[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
   }
+
   return null;
 }
 
